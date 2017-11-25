@@ -11,7 +11,7 @@
                     <p>就诊卡号：028364758</p>
                 </div>
                 <div class="right" @click="maskShow=!maskShow">
-                    <img src="#" alt="">
+                    <img src="../assets/imgs/ewm.png" alt="">
                     <p>点击出示就诊二维码</p>
                 </div>
             </div>
@@ -31,7 +31,7 @@
         <!-- 就诊二维码弹层 -->
         <div :class="['ewm-mask', {'on': maskShow}]" @click="maskShow=!maskShow">
             <div class="content">
-                <img src="#" alt="">
+                <img src="../assets/imgs/ewm.png" alt="">
                 <p>出示就诊二维码给医护人员</p>
             </div>
         </div>
