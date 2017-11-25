@@ -35,8 +35,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       compress: {
         warnings: false
       },
-      sourceMap: config.build.productionSourceMap,
-      parallel: true
+      sourceMap: false
     }),
     // extract css into its own file
     new ExtractTextPlugin({
