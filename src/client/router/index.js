@@ -19,9 +19,8 @@ const router = new Router({
       component: User,
       name: '个人中心'
     }, {
-      path: '*',
-      component: User,
-      name: '个人中心'
+      path: '/',
+      redirect: '/user'
     }, {
       path: '/info',
       component: UserInfo,
@@ -39,9 +38,6 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-  if (to.redirectedFrom == '/' && wxUtils.isIOS()) {
-      sessionStorage.locationHref = window.location.origin + to.fullPath
-  }
   let title = to.name ? to.name : '腾讯医疗';
   setWechatTitle(title);
   next();
