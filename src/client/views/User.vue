@@ -21,9 +21,10 @@
             <router-link tag="li" to="/info">
                 <span>个人信息</span>
             </router-link>
-            <li>
+            <router-link tag="li" to="/visitors">
                 <span>就诊人管理</span>
-            </li>
+                <i>2</i>
+            </router-link>
             <li>
                 <span>我的挂号</span>
             </li>
@@ -35,6 +36,7 @@
                 <p>出示就诊二维码给医护人员</p>
             </div>
         </div>
+        <!-- <router-link to="#" class="add-btn">添加就诊人</router-link> -->
     </div>
 </template>
 
@@ -99,15 +101,25 @@
             z-index: 1;
             li {
                 position: relative;
+                @include flex_box;
+                @include pack_justify;
                 &:after {
                     @include border_btm;
                 }
-                padding: .34rem 0;
+                &:last-child:after {
+                    height: 0;
+                }
+                padding: .34rem .3rem .34rem 0;
             }
-            span {
+            span, i {
                 line-height: .42rem;
-                display: inline-block;
+                display: block;
                 font-size: .3rem;
+            }
+            i {
+                color: #888;
+                @include flex;
+                text-align: right;
             }
         }
 

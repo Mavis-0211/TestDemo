@@ -77,6 +77,10 @@ export default {
                 @include border_btm;
             }
 
+            &:last-child:before {
+                height: 0;
+            }
+
             span {
                 color: #888;
                 @include flex;
