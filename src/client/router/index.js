@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Home from '@/views/Home'
 import User from '@/views/User'
+import UserInfo from '@/views/UserInfo'
+import PhoneChange from '@/views/PhoneChange'
 
 Vue.use(Router)
 
@@ -10,17 +11,18 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/home',
-      name: 'Home',
-      component: Home
-    },
-    {
       path: '/user',
       name: 'User',
       component: User
-    },{
+    }, {
       path: '*',
-      component: Home
+      component: User
+    }, {
+      path: '/info',
+      component: UserInfo
+    }, {
+      path: '/phone_change',
+      component: PhoneChange
     }
   ]
 })
