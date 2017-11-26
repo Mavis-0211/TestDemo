@@ -83,7 +83,7 @@ export default {
                 background-color: #f76260;
                 position: fixed;
                 top: 0;
-                width: 100%;
+                width: 7.5rem;
                 text-align: center;
                 padding: .2rem 0;
                 z-index: 2;
