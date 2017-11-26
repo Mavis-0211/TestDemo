@@ -10,8 +10,3 @@
         name: "app"
     }
 </script>
-
-
-<style lang="scss" scoped>
-
-</style>

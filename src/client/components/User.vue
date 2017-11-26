@@ -61,6 +61,7 @@
             height: 100%;
             top: 0;
             left: 0;
+            right: 0;
             margin: 0 auto;
             opacity: 0;
             z-index: 0;

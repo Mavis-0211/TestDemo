@@ -2,10 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import setWechatTitle from '../assets/js/SetWechatTitle'
 
-import User from '@/views/User'
-import UserInfo from '@/views/UserInfo'
-import PhoneChange from '@/views/PhoneChange'
-import VisitorsList from '@/views/VisitorsList'
+import User from '@/client/components/User'
+import UserInfo from '@/client/components/UserInfo'
+import PhoneChange from '@/client/components/PhoneChange'
+import VisitorsList from '@/client/components/VisitorsList'
 
 Vue.use(Router)
 
