@@ -5,7 +5,7 @@ router.get('/user', function(req, res) {
     res.json({
         visitorsNum: 2,
         userName: "张三",
-        QRCode: '../assets/imgs/ewm.png',
+        QRCode: '/imgs/ewm.png',
         cardId: '028364758',
         payType: "医保"
     })  

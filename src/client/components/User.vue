@@ -11,7 +11,7 @@
                     <p>就诊卡号：{{user.cardId}}</p>
                 </div>
                 <div class="right" @click="maskShow=!maskShow">
-                    <img src="../assets/imgs/ewm.png" alt="">
+                    <img :src="user.QRCode" alt="">
                     <p>点击出示就诊二维码</p>
                 </div>
             </div>
@@ -32,7 +32,7 @@
         <!-- 就诊二维码弹层 -->
         <div :class="['ewm-mask', {'on': maskShow}]" @click="maskShow=!maskShow">
             <div class="content">
-                <img src="../assets/imgs/ewm.png" alt="">
+                <img :src="user.QRCode" alt="">
                 <p>出示就诊二维码给医护人员</p>
             </div>
         </div>
