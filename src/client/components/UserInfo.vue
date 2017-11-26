@@ -1,50 +1,57 @@
 <template>
-    <div class="info">
+    <div class="info" v-if="domShow">
         <ul>
             <li>
                 <label>姓名</label>
-                <span>张三</span>
+                <span>{{userInfo.userName}}</span>
             </li>
             <li>
                 <label>就诊号</label>
-                <span>0012745</span>
+                <span>{{userInfo.cardId}}</span>
             </li>
             <li>
                 <label>身份证号</label>
-                <span>{{iDFilter(ID)}}</span>
+                <span>{{iDFilter(userInfo.IDNumber)}}</span>
             </li>
             <router-link tag="li" to="/phone_change">
                 <label>手机号</label>
-                <span>{{telFilter(tel)}}</span>
+                <span>{{telFilter(userInfo.userTel)}}</span>
             </router-link>
         </ul>
         <ul>
             <li>
                 <label>费别</label>
-                <span>北京医保</span>
+                <span>{{userInfo.payType}}</span>
             </li>
         </ul>
 
         <ul>
             <li>
                 <label>紧急联系人</label>
-                <span>李四</span>
+                <span>{{userInfo.touchName}}</span>
             </li>
             <li>
                 <label>紧急联系人手机号</label>
-                <span>18833334444</span>
+                <span>{{userInfo.touchTel}}</span>
             </li>
         </ul>
     </div>
 </template>
 
 <script>
+import api from "../api/index"
 export default {
     data() {
         return {
-            tel: "13311112222",
-            ID: "360734199310220011"
+            userInfo: {},
+            domShow: false
         }
+    },
+    mounted () {
+        api.getUserInfo(res => {
+            this.userInfo = res.data
+            this.domShow = true
+        })
     },
     methods: {
         telFilter(tel) {

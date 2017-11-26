@@ -2,7 +2,13 @@ var express = require("express")
 var router = express.Router(); 
 
 router.get('/user', function(req, res) {
-    res.json({ message: 'hooray! welcome to our api!' })  
+    res.json({
+        visitorsNum: 2,
+        userName: "张三",
+        QRCode: '../assets/imgs/ewm.png',
+        cardId: '028364758',
+        payType: "医保"
+    })  
 });
 
 module.exports = router

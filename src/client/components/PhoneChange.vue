@@ -10,16 +10,19 @@
 </template>
 
 <script>
+import api from "../api/index"
 export default {
     data() {
         return {
-            tel: '13311112222',
+            tel: '',
             isWarm: false
         }
     },
     mounted () {
         document.getElementById('tel').focus()
-        this.tel = this.telFilter(this.tel)  
+        api.getTel(res => {
+            this.tel = this.telFilter(res.data.tel)
+        })
     },
     computed: {
         // 是否显示清除图标

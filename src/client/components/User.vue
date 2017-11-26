@@ -5,10 +5,10 @@
             <div class="content">
                 <div class="left">
                     <h2>
-                        <span>秦小辉</span>
-                        <i>医保</i>
+                        <span>{{user.userName}}</span>
+                        <i>{{user.payType}}</i>
                     </h2>
-                    <p>就诊卡号：028364758</p>
+                    <p>就诊卡号：{{user.cardId}}</p>
                 </div>
                 <div class="right" @click="maskShow=!maskShow">
                     <img src="../assets/imgs/ewm.png" alt="">
@@ -23,7 +23,7 @@
             </router-link>
             <router-link tag="li" to="/visitors">
                 <span>就诊人管理</span>
-                <i>2</i>
+                <i>{{user.visitorsNum}}</i>
             </router-link>
             <li>
                 <span>我的挂号</span>
@@ -41,11 +41,18 @@
 </template>
 
 <script>
+    import api from "../api/index"
     export default {
         data() {
             return {
-                maskShow: false
+                maskShow: false,
+                user: {}
             }
+        },
+        mounted () {
+            api.getUser(res => {
+                this.user = res.data
+            })
         }
     }
 </script>

@@ -1,25 +1,35 @@
 <template>
     <div class="visitors">
         <ul>
-            <li>
+            <li v-for="li in visitors" :key="li.id">
                 <h2>
-                    <span>李花花</span>
-                    <i>医保支付</i>
+                    <span>{{li.userName}}</span>
+                    <i>{{li.payType}}</i>
                 </h2>
-                <p>门诊号：20173232</p>
-            </li>
-            <li>
-                <h2>
-                    <span>张大大</span>
-                    <i>全费支付</i>
-                </h2>
-                <p>门诊号：20173232</p>
+                <p>门诊号：{{li.cardId}}</p>
             </li>
         </ul>
 
         <router-link to="#" class="add-btn">添加就诊人</router-link>
     </div>
 </template>
+
+<script>
+import api from "../api/index"
+export default {
+    data() {
+        return {
+            visitors: []
+        }
+    },
+    mounted () {
+        api.getVisitors(res => {
+            this.visitors = res.data.list
+        })
+    }
+}
+</script>
+
 
 <style lang="scss" scoped>
     @import "../assets/css/_Mixins";
