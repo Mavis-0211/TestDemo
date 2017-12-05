@@ -22,7 +22,7 @@ node版本：8.9.1
 3. 在浏览器地址栏输入```localhost:4000```
 4. 启动MongoDB数据库```mongod --config /usr/local/etc/mongod.conf```(Mac操作系统下)
 5. 连接mongoDB```mongo```
-6. 创建数据库```user blog```
+6. 创建数据库```use blog```
 7. 插入数据
 ```
 db.users.insert({"userName":"张三", "visitorsNum": 2, "QRCode": "/imgs/ewm.png", "cardId": "02123213", "payType": "医保"})
