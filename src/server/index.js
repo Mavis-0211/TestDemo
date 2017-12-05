@@ -41,10 +41,10 @@ app.use(webpackDevMiddleware(compiler, {
 
 app.use(webpackHotMiddleware(compiler))
 
-app.use(express.static(path.join(__dirname, 'views')))
-app.get('/', function (req, res) {
-  res.sendFile('./views/index.html')
-})
+// app.use(express.static(path.join(__dirname, 'views')))
+// app.get('/', function (req, res) {
+//   res.sendFile('./views/index.html')
+// })
 
 import user from "./routes/user"
 import userInfo from "./routes/userInfo"
